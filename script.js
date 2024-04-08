@@ -11,10 +11,22 @@ const questions = [
     {
         question: "2. Como você cria um link em HTML?",
         answers: [
-            { option: "a) <a src=\"link\">Texto do Link</a>", correct: false},
-            { option: "b) <link href=\"link\">Texto do Link</link>", correct: false},
-            { option: "c) <a href=\"link\">Texto do Link</a>", correct: true},
-            { option: "d) <link src=\"link\">Texto do Link</link>", correct: false},
+            { 
+                option: "a) &lt;a src=&quot;link&quot;&gt;Texto do Link&lt;/a&gt;", 
+                correct: false
+            },
+            { 
+                option: "b) &lt;link href=&quot;link&quot;&gt;Texto do Link&lt;/link&gt;", 
+                correct: false
+            },
+            { 
+                option: "c) &lt;a href=&quot;link&quot;&gt;Texto do Link&lt;/a&gt", 
+                correct: true
+            },
+            { 
+                option: "d) &lt;link src=&quot;link&quot;&gt;Texto do Link&lt;/link&gt;", 
+                correct: false
+            },
         ]
     }
 ]
@@ -28,7 +40,7 @@ let score = 0;
 
 // 1. cada .question deve receber uma question
 // 2 . cada div .each-answer deve receber uma option
-// 
+// 3. a cada clique em .each-answer, deverá ser testado se a opção é certa.
 
 
 function loadQuestion() {
@@ -40,7 +52,12 @@ function loadQuestion() {
 
 }
 
+if(questions[0].answers[0].correct == true) {
+    console.log('sim')
+}
+
 loadQuestion()
+
 
 
 btnNext.addEventListener('click', function() {
