@@ -33,12 +33,14 @@ let score = 0;
 
 function loadQuestion() {
     questionDiv.innerHTML = questions[currentIndex].question
+
+    questions[currentIndex].answers.forEach( (answer, index) => {
+        eachAnswer[index].innerHTML = answer.option
+    })
+
 }
 
 loadQuestion()
-
-
-
 
 
 btnNext.addEventListener('click', function() {
