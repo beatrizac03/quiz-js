@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #303030;
+    --light-blue: #62C0EB;
+    --dark-blue: #092D5D;
+    --green: #00C76F;
+    --red: #DB5A5E;
+    --white: white;
+
+    --base-size: 1.2rem;
+    --scale: 1.25;
+    --xxl: calc(var(--xxl) * var(--scale));
+    --xl: calc(var(--large) * var(--scale));
+    --large: calc(var(--medium) * var(--scale));
+    --medium: calc(var(--regular) * var(--scale));
+    --regular: calc(var(--small) * var(--scale));
+    --small: calc(var(--smallest) * var(--scale));
+    --smallest: calc((var(--base-size)) / (var(--scale)));
+}
+
+body {
+    overflow-x: hidden;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+}
+
+.quiz-container {
+    width: 50%;
+    height: 90%;
+    background-color: var(--black);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.cont-quiz {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-quiz {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+}
+
+.title-quiz::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    border-bottom: 2px solid var(--light-blue);
+}
+
+.question {
+    /* border: 1px solid brown; */
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.answers-quiz {
+    width: 100%;
+    height: 70%;
+    /* border: 1px solid white; */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.each-answer {
+    width: 100%;
+    height: 15%;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.btn-next {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    align-self: flex-end;
+    margin-right: 1rem;
+}
+
+.btn-next:hover{
+    cursor: pointer;
+}
+
