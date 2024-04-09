@@ -30,6 +30,7 @@ function chooseAnswer() {
     questions[currentIndex].answers.forEach( (answer, index) => {
         if(answer.correct) {
             eachAnswer[index].style.backgroundColor = 'red'
+            eachAnswer[index].dataset.correct = answer.correct
         } else {
             eachAnswer[index].style.backgroundColor = 'green'
         }
