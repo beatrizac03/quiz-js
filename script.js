@@ -14,6 +14,7 @@ let score = 0;
 
 function loadQuestion() {
     questionDiv.innerHTML = questions[currentIndex].question
+    questionDiv.style.color = 'white'
 
     questions[currentIndex].answers.forEach( (answer, index) => {
         eachAnswer[index].innerHTML = answer.option
@@ -25,21 +26,34 @@ if(questions[0].answers[0].correct == true) {
     console.log('sim')
 }
 
-loadQuestion()
+
+// function chooseAnswer() {
+//     questions[currentIndex].answers.forEach( (answer, index) => {
+//         if(answer.correct) {
+//             eachAnswer[index].style.backgroundColor = 'red'
+//         } else {
+//             eachAnswer[index].style.backgroundColor = 'green'
+//         }
+//     })
+// }
 
 function chooseAnswer() {
     questions[currentIndex].answers.forEach( (answer, index) => {
-        if(answer.correct == true) {
+        if(answer.correct) {
             eachAnswer[index].style.backgroundColor = 'red'
+        } else {
+            eachAnswer[index].style.backgroundColor = 'green'
         }
     })
 }
-
-chooseAnswer()
-
 
 
 btnNext.addEventListener('click', function() {
     currentIndex++
     loadQuestion()
 })
+
+
+loadQuestion()
+
+chooseAnswer()
