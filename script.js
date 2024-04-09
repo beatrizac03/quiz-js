@@ -26,17 +26,6 @@ if(questions[0].answers[0].correct == true) {
     console.log('sim')
 }
 
-
-// function chooseAnswer() {
-//     questions[currentIndex].answers.forEach( (answer, index) => {
-//         if(answer.correct) {
-//             eachAnswer[index].style.backgroundColor = 'red'
-//         } else {
-//             eachAnswer[index].style.backgroundColor = 'green'
-//         }
-//     })
-// }
-
 function chooseAnswer() {
     questions[currentIndex].answers.forEach( (answer, index) => {
         if(answer.correct) {
