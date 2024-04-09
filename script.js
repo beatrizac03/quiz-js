@@ -1,35 +1,4 @@
-const questions = [
-    {
-        question: "1. O quê significa HTML?",
-        answers: [
-            { option: "a) Hypertext Markup Language", correct: true},
-            { option: "b) Hyper Transfer Markup Language", correct: false},
-            { option: "c) Hyperlinks and Text Markup Language", correct: false},
-            { option: "d) High-Level Text Markup Language", correct: false},
-        ]
-    },
-    {
-        question: "2. Como você cria um link em HTML?",
-        answers: [
-            { 
-                option: "a) &lt;a src=&quot;link&quot;&gt;Texto do Link&lt;/a&gt;", 
-                correct: false
-            },
-            { 
-                option: "b) &lt;link href=&quot;link&quot;&gt;Texto do Link&lt;/link&gt;", 
-                correct: false
-            },
-            { 
-                option: "c) &lt;a href=&quot;link&quot;&gt;Texto do Link&lt;/a&gt", 
-                correct: true
-            },
-            { 
-                option: "d) &lt;link src=&quot;link&quot;&gt;Texto do Link&lt;/link&gt;", 
-                correct: false
-            },
-        ]
-    }
-]
+import questions from './questions-answers.js'
 
 let questionDiv = document.querySelector('.question')
 let eachAnswer = document.querySelectorAll('.each-answer')
@@ -57,6 +26,16 @@ if(questions[0].answers[0].correct == true) {
 }
 
 loadQuestion()
+
+function chooseAnswer() {
+    questions[currentIndex].answers.forEach( (answer, index) => {
+        if(answer.correct == true) {
+            eachAnswer[index].style.backgroundColor = 'red'
+        }
+    })
+}
+
+chooseAnswer()
 
 
 
