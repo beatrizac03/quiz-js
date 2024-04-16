@@ -108,10 +108,27 @@ body {
 }
 
 .correct {
-    background-color: green;
+    background-color: rgb(86, 236, 86);
 }
 
 .incorrect {
-    background-color: red;
+    background-color: rgb(241, 51, 51);
 }
 
+.each-answer:disabled {
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none;
+}
+
+.btn-startgame {
+    width: 500px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    position: relative;
+    top: 40%;
+    left: 10%;
+}
