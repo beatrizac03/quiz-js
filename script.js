@@ -11,9 +11,7 @@ let score = 0;
 
 btnStartGame.addEventListener('click', startGame)
 
-eachAnswer.forEach( answer => {
-    answer.addEventListener('click', selectAnswer)
-})
+
 
 btnNext.addEventListener('click', loadQuestion)
 
@@ -41,28 +39,29 @@ function loadQuestion() {
         }
     })
 
+    eachAnswer.forEach( answer => {
+        answer.addEventListener('click', selectAnswer) // adiciona um evento p cada opção de resposta, ou seja vai testar cada uma das opções c a função select answer
+    })
+
 }
 
 function resetState() {
-
     document.body.removeAttribute('class')
     btnNext.classList.add('hidden')
 
     eachAnswer.forEach(button => {
         button.classList.remove('correct', 'incorrect');
         button.disabled = false;
+        button.removeAttribute('data-correct')
     });
 
     btnNext.classList.add('hidden');
 }
 
-if(questions[0].answers[0].correct == true) {
-    console.log('sim')
-}
 
 function selectAnswer (event) {
     let answerClicked = event.target
-    console.log(answerClicked)
+
     if (answerClicked.dataset.correct) {
         document.body.classList.add('correct')
     } else {
@@ -78,6 +77,7 @@ function selectAnswer (event) {
 
         button.disabled = true
     })
+    
     currentIndex++
 
     btnNext.classList.remove('hidden')
